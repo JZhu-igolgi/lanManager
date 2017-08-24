@@ -1,0 +1,249 @@
+header, footer {
+    color: white;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: black;
+    font-size: 32px;
+    padding: 25px;
+}
+
+footer {
+    background-color: grey;
+    font-size: 14px;
+    padding: 15px;
+}
+
+form {
+    float: right;
+}
+
+.info {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+#pageWrapper {
+    min-width: 1100px;
+    max-width: 1500px;
+    margin: auto;
+    background-color: #000000;
+}
+
+#borderWrapper {
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: grey;
+}
+
+#innerWrapper {
+    border-radius: 15px;
+    margin-left: 1%;
+    margin-right: 1%;
+    min-height: 750px;
+    background-color: #FFFFFF;
+}
+
+#buttonWrapper {
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 15px;
+    padding: 0px 2px;
+    border: 2px solid black;
+    background: grey; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(grey, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(grey, black); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(grey, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(grey, black); /* Standard syntax */
+    text-align: center;
+}
+
+.button {
+    float: center;
+    border-radius: 10px;
+    color: white;
+    padding: 2px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: red;
+}
+
+.download{
+    float: right;
+    border-radius: 10px;
+    color: white;
+    background-color: #222222;
+    box-shadow: 0px 5px 0px grey;
+    position: relative;
+    top: 0px;
+    padding: 5px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+.download:active{
+    box-shadow: 0px 3px 0px grey;
+    top: 3px;
+}
+
+.install{
+    float: right;
+    border-radius: 10px;
+    color: white;
+    background-color: #222222;
+    box-shadow: 0px 5px 0px grey;
+    position: relative;
+    top: 0px;
+    padding: 5px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+.install:active{
+    box-shadow: 0px 3px 0px grey;
+    top: 3px;
+}
+
+.IPcheckbox{
+    float: right;
+}
+
+.column {
+    float: left;
+    padding: 15px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#tableBorder {
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 6px;
+    padding: 0px 0px 10px 0px;
+    float: center;
+    border: 1px solid grey;
+}
+
+#tableTitle {
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px 0px 0px 0px;
+    margin-bottom: 1%;
+    float: top;
+    background: #cccccc; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(top right, #cccccc, #222222); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom left, #cccccc, #222222); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom left, #cccccc, #222222); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(bottom left, #cccccc, #222222); /* Standard syntax */
+    border: 1px solid grey;
+}
+
+menu {
+    width: 25%;
+}
+
+.content {
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: #222222;
+}
+
+td {
+    text-align: center;
+    font-size: 12px;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+.status {
+    float: right;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    border: solid rgba(0,0,0,.2);
+}
+
+.client {
+    background: green;
+}
+
+.unknown {
+    background: red;
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}

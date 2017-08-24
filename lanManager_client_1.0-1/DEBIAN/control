@@ -1,0 +1,10 @@
+Package: lanManager
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: amd64
+Dependencies: Apache2 (>= 2.2.32), sqlite3 (>= 3.0.0), nmap (>= 7.0.0)
+Maintainer: Eric Henricks <ehenricks.igolgi@gmail.com>
+Description: lanManager is a
+ LAN auditor that uses UDP and TCP,
+ to collect data about clients on the network.

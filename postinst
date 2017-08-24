@@ -1,0 +1,64 @@
+#!/bin/sh
+# postinst script
+#
+
+INSTDIR="/etc"
+WEBDIR="/var/www/html"
+WEBDIRALT="/var/www"
+LAUNCHDIR="/etc/init.d/"
+BINDIR="/usr/bin"
+
+if [ -d $INSTDIR ]; 
+	then
+        chmod -R a+rwX $INSTDIR/lanManager
+        chmod a+x $INSTDIR/lanManager/lanManager
+        chmod og-w $INSTDIR/lanManager/lanManager
+        echo "Modified $INSTDIR/lanManager successfully"
+        else 
+		echo "Sorry, $INSTDIR does not exist"
+    fi
+
+if [ -d $WEBDIR ]; 
+	then
+        chmod -R a+rwX $WEBDIR/lanman
+        chmod a+x $WEBDIR/lanman
+        chmod og-w $WEBDIR/lanman
+        echo "Modified $WEBDIR/lanman successfully"
+        else 
+		echo "Sorry, $WEBDIR does not exist"
+    fi
+
+if [ -d $WEBDIRALT ];
+	then
+        chmod -R a+rwX $WEBDIRALT/lanman
+        chmod a+x $WEBDIRALT/lanman
+        chmod og-w $WEBDIRALT/lanman
+        chown www-data: $WEBDIRALT/lanman/lanManager_install.sh
+        chmod u-w+x $WEBDIRALT/lanman/lanManager_install.sh
+        chmod -R a+rwX $WEBDIRALT/.ssh
+        chmod a+x $WEBDIRALT/.ssh
+        chmod og-w $WEBDIRALT/.ssh
+        echo "Modified $WEBDIRALT/lanManagerWeb successfully"
+        else 
+		echo "Sorry, $WEBDIRALT does not exist"
+    fi
+
+if [ -d $LAUNCHDIR ] ; 
+	then 
+		chmod +x $LAUNCHDIR/lanManager.sh
+		update-rc.d lanManager.sh defaults
+        sudo $LAUNCHDIR/lanManager.sh start
+        echo "Modified $LAUNCHDIR/lanManager.sh successfully"
+		else 
+		echo "Sorry, $LAUNCHDIR does not exist"
+	fi
+if [ -d $BINDIR ] ;
+    then
+        echo "Please refer to About_lanManager.txt before using lanManager"
+        echo "About_lanManager.txt can be found in $BINDIR/lanManager"
+        echo "Config settings for lanManager should be changed aswell"
+        echo "The config file labAuditConfig.ini can be found in $INSTDIR/lanManager"
+        else
+        echo "Sorry, $BINDIR does not exist"
+    fi
+

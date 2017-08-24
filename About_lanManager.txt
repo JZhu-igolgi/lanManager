@@ -1,0 +1,70 @@
+Overview:
+    lanManager is a Linux based, local area network auditing program, that uses UDP and TCP port connections to monitor devices connected to a LAN.
+    All data collected by the program will be uploaded and accessible on a webpage, where you can monitor devices on your LAN from one location.
+    
+    The sections below will provide information on using the program, accessing the webpage, and editing the configuration file.
+
+Using the Program:
+    Before running lanManager on your device, check the configuration settings located within the labAuditConfig.ini file.
+    If you already installed the program on your machine, then navigate to the default install directory /etc/lanManager/
+        Once inside the /etc/lanManager/ directory, open the labAuditConfig.ini file, and change the settings accordingly:
+
+            MulticastIP=(Your desired multicast IP)
+
+            MulticastPort=(Your desired multicast port)
+
+            TcpIP=(This should be the set to the IPv4 of device running the server)
+                *If you dont know the IPv4 of the machine that will be running the server use the 'ifconfig'
+                terminal command and use the "inet addr:" number of your primary interface for this field*
+
+            TcpPort=(Your desired TCP port)
+
+            UpdateRate=(How often the server updates the contents of its' database in seconds)
+
+            ScanRate=(How often the server pings your broadcast IP)
+                *ScanRate tells the program to ping the LAN broadcast IP based on UpdateRate.
+                For example: UpdateRate=30, ScanRate=3 --> (30 * 3) = ping the broadcast IP every 90 seconds*
+
+            lanIP=(This should be set to your LAN broadcast IP)
+                *If you dont know your LAN broadtcast IP, use the 'ifconfig' terminal command
+                and use the "Bcast:" number of your primary interface for this field*
+
+    When running lanManager, the program can be ran in two primary modes, server and client.
+            By default the program will attempt to run in client mode unless the user tells the program otherwise
+            When launching the program, there are several commands the user can run
+            "-h" will list the available commands for lanManager
+            "-v" will show which version of lanManager is installed
+            "-s" will run the program in server mode
+            "-t" will force the program to run in client mode
+            "-d" will run the program as a daemon (the program will run as a background process, and write to a log file)
+            "-r" will reset the program's database files before running the program so only the most up-to-date info is shown on the webpage
+            "-c" will allow the user to enter an alternative configuration file name for the program to use
+                    ***NOTE: The alternate configuration file should use the same setup, and variable names, as labAuditConfig.ini!!!***
+
+    Devices running in server mode will be required to have Apache2, SQLite3, and nmap installed on the local system to function.
+    Once a device launches lanManager in server mode, the program will begin running based on the settings found in labAuditConfig.ini.
+    After reading in the labAuditConfig.ini file, the program will begin auditing your LAN, and will update the webpage with all relevent information.
+
+    For additional information, and commands 
+
+Locating the Webpage:
+    Apache2 is used as the main web server for lanManager, and the content of this section will be described as it pertains to apache2.
+    The computer running the server will also run the program webpage found in the /var/www/ directory. 
+        (Depending on your system apache2 may installed a var/www/html/ directory, and the lanManager website will be installed that directory aswell)
+    To access your webpage, launch a web browser and type in "(Your server IP)/lanManagerWeb/index.php" into the address bar.
+        (Your server IP will be the same IP you used for TcpIP in the labAuditConfig.ini file)
+    If your apache2 and lanManager have been installed correctly, then you should be able to see the the Overview page for your LAN.
+    From the Overview page, you will be able to navigate to multiple different sections of the webpage, and learn more about devices currently running lanManager on your LAN.
+
+Default Directories:
+    Program/Database/Configuration File Installation Location:
+        "/etc/lanManager/"
+    Webpage Installation Location:
+        Primary:
+            "/var/www/html/lanman"
+        Secondary:
+            "/var/www/lanman/"
+    Log File Location:
+        "/var/log/lanManager"
+
+Thank you for installing lanManager!
